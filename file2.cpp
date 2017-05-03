@@ -1,29 +1,33 @@
-#include <fstream.h>
 #include <iostream.h>
-class per
-{
+#include <fstream.h>
+class per{
+private:
+	char name[80];
+	short age;
 public:
-	char name[20];
-	int age;
-public:
-	void input()
+	static void header()
+	{
+		cout << "\nName\tAge\n";
+	}
+	/*void input()
 	{
 		cout << "Name: ";
 		cin.seekg(0);
 		cin.get(name,20);
 		cout << "Age: ";
 		cin >> age;
-	}
-	void output()
-	{
+	}*/
+	void output(){
 		cout << "Name: " << name << endl;
 		cout << "Age: " << age << endl;
 	}
 };
 void main()
 {
-	per r;
-	r.input();
-	ofstream outfile("Dane.dat");
-	outfile.write((char*)(&r),sizeof(r));
+	per er[20];
+	ifstream infile("son.DAT",ios::binary);
+	infile.read((char*)(&er),3*sizeof(per));
+	for(int i=0;i<3;i++)
+		er[i].output();
+	infile.close();
 }
