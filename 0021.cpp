@@ -53,7 +53,7 @@ class object2: public object1
      		obj1[i].output1();
             }
      	}
-};ofstream file;
+};
 void main()
 {
     
@@ -64,12 +64,7 @@ void main()
     cout << "2. output" << endl;
     switch(getch())
     {
-	case '1': clrscr(); obj.input(); 
-             
-             file.open("hack.txt",'a');
-             file << obj.getName() << obj.getAge() << endl;
-             file.close();
-                break;
+	case '1': clrscr(); obj.input();  break;
 	case '2': clrscr(); obj.output(); break;
     }  getch(); goto nene;
 }

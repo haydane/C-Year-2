@@ -2,7 +2,7 @@
 void main()
 {
 	int *p;
-	int a=10;
+	int a[2]={10,20};
 	p=&a;
-	cout << "p= " << (p);
+	cout << "p= " << *(p+1);
 }

@@ -7,7 +7,7 @@ void score();
 int j,id,age,pnum,i,n,cpp;
 char name[20],sex[7];
 class data
-{
+{											
 	protected: 
 		int id,age,pnum,cpp;
 		char name[20],sex[7];
@@ -83,7 +83,7 @@ void main()
 		case '1': sort(); input(); break;
 		case '2': output(); break;
 		case '3': score(); break;
-	} getch(); goto nene;
+	} goto nene;
 }
 void input()
 {
@@ -103,8 +103,8 @@ void input()
 		cin >> pnum;
 		cout << "<<enter>> to continue\n\n";
 		d[i].setData(id,name,age,sex,pnum,cpp);
-		i++;
-		n++;		
+		i++;		
+		n++;
 	} while(getch()==13); 
 }
 
@@ -114,6 +114,7 @@ void output()
 	cout << "ID\tName\tAge\tSex\tP-Num\tScore\n";
 	for(i=0;i<n;i++)
 		cout << d[i].getID() << "\t" << d[i].getName() << "\t" << d[i].getAge() << "\t" << d[i].getSex() << "\t" << d[i].getPnum() << "\t" << d[i].getCpp()  << "\n";
+getch();
 }
 void sort()
 { 
