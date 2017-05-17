@@ -1,27 +1,23 @@
-#include <iostream.h>
-template <class T>
-void sort(T a[],int n)
+/*Tempale is a stardard for doing different tasks*/
+#include <iostream.h> 
+#include <string.h> // template definition of swap();
+template <class T> // values passed on by reference
+void swap(T x, T y)
 {
-	for(int i=0;i<n;i++)
-		for(int j=i+1;j<n;j++)
-			if(a[i]>a[j])
-			{
-				T temp;
-				temp=a[i];
-				a[i]=a[j];
-				a[j]=temp;
-			}
-}
-template <class T>
-void display(T b[],int n)
-{
-	for(int i=0;i<n;i++)
-		cout << b[i] << endl;
+	T temp;
+	temp = x;
+	x = y;
+	y = temp;
+	cout<< x << "\t" << y << endl;
 }
 void main()
 {
-	const int b=4;
-	int hay[b]={4,8,1,19};
-	sort(hay,b);
-	display(hay,b);
+	int n1=10,n2=20;
+	char ch1='B',ch2='A';
+	double n3=11.11,n4=22.22;
+	char *s1 = "Hello",*s2 = "World";
+	swap(n1,n2);
+	swap(n3,n4);
+	swap(ch1,ch2);
+	swap(s1,s2);
 }

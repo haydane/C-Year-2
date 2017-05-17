@@ -9,15 +9,8 @@ public:
 	{
 		cout << "\nName\tAge\n";
 	}
-	/*void input()
+	void output()
 	{
-		cout << "Name: ";
-		cin.seekg(0);
-		cin.get(name,20);
-		cout << "Age: ";
-		cin >> age;
-	}*/
-	void output(){
 		cout << "Name: " << name << endl;
 		cout << "Age: " << age << endl;
 	}

@@ -1,55 +1,49 @@
 #include <iostream.h>
-#include <string.h>
-class op
+class test 
 {
-	float inmark;
-	float exmark;
+protected:
+	int x;
 public:
-	op()
+	test(int a=0):x(a){}
+	test(test &t):x(t.x){}
+	void in()
 	{
-		inmark=0;
-		exmark=0;
+		cout << "input x: "; cin >> x;
 	}
-	op(float in,float ex)
+	void out()
 	{
-		inmark=in;
-		exmark=ex;
+		cout << "x: "  << x << endl;
 	}
-	void dis()
+	test operator +(test &t)
 	{
-		cout << inmark << '\t' << exmark << endl;
+		return test(x + t.x);
 	}
-	op operator+(op o)
+	test operator +(int a)
 	{
-		op tmp;
-		tmp.inmark = inmark + o.inmark;
-		tmp.exmark = exmark + o.exmark;
-		return tmp;
+		return test(x + a);
 	}
-	op operator*(op o)
+	friend test operator +(int a,test &t)
 	{
-		op tmp;
-		tmp.inmark = inmark * o.inmark;
-		tmp.exmark = exmark * o.exmark;
-		return tmp;
-	}
-	op operator/(op o)
-	{
-		op tmp;
-		tmp.inmark = inmark / o.inmark;
-		tmp.exmark = exmark / o.exmark;
-		return tmp;
+		return test(a + t.x);
 	}
 };
 void main()
 {
-	op o1(1,2),o2(3,4);
-	o1.dis();
-	o2.dis();
-	op o3 = o1 + o2;
-	o3.dis();
-	op o4 = o1 * o2;
-	o4.dis();
-	op o5 = o1 / o2;
-	o5.dis();
+	test a(10);
+	test b(200);
+	test c;
+	a.out();
+	b.out();
+	c.out();
+
+	c=a+b;
+	a=a+20;
+	b=15+b;
+	a.out();
+	b.out();
+	c.out();
+	c=a+b+55;
+	a=12+b+c;
+	b=a+50+c;
+	a.out();
 }

@@ -1,62 +1,74 @@
 #include <iostream.h>
-class oop
+
+class threeD
 {
-	float x,y,z;
+	int x,y,z;
 public:
-	oop (){};
-	oop(float a,float b, float c)
-	{	
-		x=a;
-		y=b;
-		z=c;
-	}
-	oop operator+(oop &p)
+	threeD()
 	{
-		oop tmp;
-		tmp.x=x+p.x;
-		tmp.y=y+p.y;
-		tmp.z=z+p.z;
-		return tmp;
+		x=y=z=0;
 	}
-	oop operator-(oop &p)
+	threeD(int i,int j,int k)
 	{
-		oop tmp;
-		tmp.x=x-p.x;
-		tmp.y=y-p.y;
-		tmp.z=z-p.z;
-		return tmp;
+		x=i;
+		y=j;
+		z=k;
 	}
-	oop operator*(oop &p)
-	{
-		oop tmp;
-		tmp.x=x*p.x;
-		tmp.y=y*p.y;
-		tmp.z=z*p.z;
-		return tmp;
-	}
-	oop operator/(oop &p)
-	{
-		oop tmp;
-		tmp.x=x/p.x;
-		tmp.y=y/p.y;
-		tmp.z=z/p.z;
-		return tmp;
-	}
-	void display()
-	{
-		cout << "x: " << x << "\ty: " << y << "\tz: " << z << endl;
-	}
+	threeD operator +(threeD op2);
+	threeD operator =(threeD op2);
+	threeD operator -(threeD op2);
+	void show();
 };
+
+threeD threeD::operator -(threeD op2)
+{
+	threeD temp;
+	temp.x=x-op2.x;
+	temp.y=y-op2.y;
+	temp.z=z-op2.z;
+	return temp;
+}
+
+threeD threeD::operator +(threeD op2)
+{
+	threeD temp;
+	temp.x=x+op2.x;
+	temp.y=y+op2.y;
+	temp.z=z+op2.z;
+	return temp;
+}
+
+threeD threeD::operator =(threeD op2)
+{
+	threeD tmp;
+	tmp.x=op2.x;
+	tmp.y=op2.y;
+	tmp.z=op2.z;
+	return tmp;
+}
+
+void threeD::show()
+{
+	cout << x << ",";
+	cout << y << ",";
+	cout << z << endl;
+}
 void main()
 {
-	oop obj1(1,2,3),obj2(1,2,3);
-	oop obj3,obj4,obj5,obj6;
-	obj3 = obj1 + obj2;
-	obj4 = obj1 - obj2;
-	obj5 = obj1 * obj2;
-	obj6 = obj1 / obj2;
-	obj3.display();
-	obj4.display();
-	obj5.display();
-	obj6.display();
+	threeD a(1,2,3);
+	threeD b(10,10,10);
+	threeD c,d,e;
+	cout << "Original value of a: ";
+	a.show();
+	cout << "Original value of b: ";
+	b.show();
+	c=a-b;
+	d=a+b;
+	e=a;
+	cout << "a-b: ";
+	c.show();
+	cout << "a+b: ";
+	d.show();
+	cout << "e=a: ";
+	e.show();
 }

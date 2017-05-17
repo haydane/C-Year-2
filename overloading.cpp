@@ -1,21 +1,35 @@
 #include <iostream.h>
-int area(int side)
+class Vector
 {
-	return side*side;
-}
-int area(int l, int b)
-{
-	return l*b;
-}
+	int x,y,z;
+public:
+	Vector(int a,int b,int c)
+	{
+		x = a;
+		y = b;
+		z = c;
+	}
+	Vector(){}; // Empty or Default Constructor
+	Vector operator+ (Vector s)
+	{
+		x = x + s.x;
+		y = y + s.y;
+		z = z + s.z;
+		return Vector (x,y,z);
+	}
+	void Dis()
+	{
+		cout << "x component = " << x << endl;
+		cout << "y component = " << y << endl;
+		cout << "z component = " << z << endl;
+	}
+};
+
 void main()
 {
-	int (*p1)(int);
-	int (*p2)(int,int);
-	p1=area;
-	p2=area;
-	cout << "Address of area(int) = " << (unsigned int)p1 << endl;
-	cout << "Address of area(int,int) = " << (unsigned int)p2 << endl;
-	cout << "Invoking area(int) via p1 = " << p1(20) << endl;
-	cout << "Invoking area(int,int) via p2 = " << p2(10,20) << endl;
-
+	Vector obj1(2,4,6);
+	Vector obj2(3,5,8);
+	Vector obj3;
+	obj3 = obj1 + obj2;
+	obj3.Dis();
 }

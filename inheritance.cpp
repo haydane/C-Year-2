@@ -1,75 +1,35 @@
 #include <iostream.h>
-class info
+class B
 {
 protected:
-	int id;
-	char name[20];
+	int m;
 };
-class student : protected info
-{
-protected:
-	float kh,eng,math;
-public:
-	int static id()
-	{
-		int num;
-		return ++num;
-	}
-	float avg()
-	{
-		return (kh+math+eng)/3.0;
-	}
-	
-};
-class grade : private student
+class d : protected B
 {
 public:
-		void input()
+	int a,n;
+	int setvalue()
 	{
-		cout <<"\nName: ";
-		cin.seekg(0);
-		cin.get(name,20);
-		cout << "Khmer: ";
-		cin >> kh;
-		cout << "Math: ";
-		cin >> math;
-		cout << "English: ";
-		cin >> eng;
+		return m=a;
 	}
-	char gra()
+};
+class D1 : private d
+{
+public:
+	int b;
+	int setvalue1()
 	{
-	if(avg()<=49)
-		return 'F';
-	else if(avg()<=60)
-		return 'E';
-	else if(avg()<=70)
-		return 'D';
-	else if(avg()<=80)
-		return 'C';
-	else if(avg()<=90)
-		return 'B';
-	else return 'A';
-}
-void output()
-	{
-		cout << id() << "\t" << name << "\t" << kh << "\t" << math << "\t" << eng << "\t" << avg() << "\t" << gra() << endl;
-	}
-	void static header()
-	{
-		cout << "ID\tName\tKH\tMath\tEng\tAvg\tGrade\n";
+		return m=b;
 	}
 };
 void main()
 {
-	int n;
-	cout << "input n: ";
-	cin >> n;
-	grade *g = new grade[n];
-	system("cls");
-	for(int i=0;i<n;i++)
-		g[i].input();
-	cout << "\n";
-	grade::header();
-	for(int i=0;i<n;i++)
-		g[i].output();
+	d C;
+	C.a=4;
+	C.n=4;
+	D1 r;
+		r.b=6;
+	int product= C.a*C.n;
+	cout << "product of members of B and D= " << product << endl;
+	cout << "Sum of squares of members of B & D= " << C.n*C.n + C.a*r.b<< endl;
 }

@@ -1,32 +1,22 @@
 #include <iostream.h>
-class info
+class Rect 
 {
-	char name[20];
-	int age;
+	int x,y;
 public:
-	void input()
+	friend int Area(Rect &a);//non member class but can access variable from class
+	Rect(int l,int w)
 	{
-		cout << "Name: ";
-		cin.seekg(0);
-		cin.get(name,20);
-		cout << "Age: ";
-		cin >> age;
-	}
-	friend void output(info &f)
-	{
-		cout << f.name << "\t" << f.age << endl;
-	}
-	friend void header()
-	{
-		cout << "\nName\tAge\n";
+		x=l,y=w;
 	}
 };
-void main()
+int Area(Rect &a) // definition of friend function
 {
-	info fo[2];
-	for(int i=0;i<2;i++)
-		fo[i].input();
-	header();
-	for(int i=0;i<2;i++)
-		output(fo[i]);
+	return a.x*a.y;
+}
+int main()
+{
+	Rect R1(5,6),R2(3,4); // declaration of
+	cout << Area(R1) << endl;
+	cout << Area(R2) << endl;
+	return (0); 
 }

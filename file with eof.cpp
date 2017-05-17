@@ -19,12 +19,12 @@ public:
 void main()
 {
 	per er;
-	ifstream infile("Person.DAT",ios::binary);
+	ifstream infile("son.DAT",ios::binary);
 	while(1)
 	{
 		infile.read((char*)(&er),sizeof(per));
 		if(infile.eof()) break;
-		er.output();
+			er.output();
 	}
 	infile.close();
 }

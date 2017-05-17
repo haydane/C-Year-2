@@ -1,46 +1,18 @@
 #include <iostream.h>
-template <class T>
-class num
+template <class max>
+void m(max &x, max &y)
 {
-public:
-	T x,y;
-	num(T a, T b)
-	{
-		x=a;
-		y=b;
-	}
-	T sum()
-	{
-		return x+y;
-	}
-	/*T mul()
-	{
-		return x*y;
-	}*/
-	// void sum()
-	// {
-	// 	cout << x+y << endl;
-	// }
-	// void mul()
-	// {
-	// 	cout <<  x*y << endl;
-	// }
-	//void sum();
-	//T mul();
-};
-/*template <class T>
-void num <T>::sum()
-{
-	cout << x+y << endl;
-}*/
-
+	if(x>y)
+		cout << "max: " << x << endl;
+	else 
+		cout << "max: " << y << endl;
+}
 void main()
 {
-	num <int> obj1(1,2);
-	num <float> obj2(2.2,1.1);
-	num <char> obj3('A','C');
-	//obj1.sum();
-	cout << obj3.sum();
-	//obj2.mul();
-	//obj3.sum();
+	int n1=1,n2=2;
+	float n3=1.2,n4=2.2;
+	char *ch1 = "Ne",*ch2 = "Ne2";
+	m(n1,n2);
+	m(ch1,ch2);
+	m(n3,n4);
 }

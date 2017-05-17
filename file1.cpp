@@ -1,22 +1,19 @@
 #include <iostream.h>
 #include <fstream.h>
-class per{
+class per
+{
 private:
 	char name[80];
 	short age;
 public:
 	void input()
 	{
-		cout << "Name: ";	
-		cin >> name;
+		cout << "Name: ";
+		cin.seekg(0);	
+		cin.get(name,80);
 		cout << "Age: ";	
 		cin >> age;
 	}
-/*	void output()
-	{
-		cout << "Name: " << name << endl;
-		cout << "Age: " << age << endl;
-	}*/
 };
 void main()
 {

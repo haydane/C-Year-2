@@ -1,30 +1,32 @@
-#include <fstream.h>
 #include <iostream.h>
+#include <fstream.h>
 class per
 {
 public:
-	char name[20];
-	int age;
+	char name[80];
+	short age;
 public:
-	void input()
+	static void header()
 	{
-		cout << "Name: ";
-		cin.seekg(0);
-		cin.get(name,20);
-		cout << "Age: ";
-		cin >> age;
+		cout << "\nName\tAge\n";
+		cout << "==============\n";
 	}
-	void output()
-	{
+	void output(){
 		cout << "Name: " << name << endl;
 		cout << "Age: " << age << endl;
 	}
 };
 void main()
 {
-	per r;
-	//r.input();
-	ifstream infile("Dane.dat");
-	infile.read((char*)(&r),sizeof(r));
-	r.output();
+	per er;
+	ifstream infile("son.DAT",ios::binary|ios::in|ios::ate);
+	long n = infile.tellg()/sizeof(per);
+	per::header();
+	for(int i=n-1;i>=0;i--)
+	{
+		infile.seekg((i)*sizeof(per),ios::beg);
+		infile.read((char*)(&er),sizeof(per));
+		er.output();
+	}
+	infile.close();
 }

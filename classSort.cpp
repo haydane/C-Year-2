@@ -36,7 +36,8 @@ void sort(computer c[],int n)
 		for(int j=i+1;j<n;j++)
 			if(strcmp(c[i].getmodel(),c[j].getmodel())>0)
 			{
-				computer t=c[i];
+				computer t;
+				t=c[i];
 				c[i]= c[j];
 				c[j]=t;
 			}
