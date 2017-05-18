@@ -1,0 +1,13 @@
+Class A: 1->126
+Class B: 128->191
+Class C: 192->223
+128	64	32	16	8	4	2	1
+--------------------------------------------------------------------------------------------------
+192.168.10.x/27 (default 24 -> (27-24) = 3 (sum from 128+64+32=224)(subnet)
+Subnet Mask: 255.255.255.224
+CIDR: 27
+Borrow Bit: 3
+Remaining ID(R): 32-CIDR = 32 - 27 = 5
+Number of Subnet: 2^(Borrow Bit) = 2^3 = 8
+Usable Host: 2^(Remaining ID(R)) - 2 = (2^5) - 2 = 30
+Rang ID = 256 - (Subnet Mask) = 256 - 224 = 32
