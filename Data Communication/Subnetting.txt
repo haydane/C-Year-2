@@ -14,9 +14,9 @@ Number of Subnet: 2^(Borrow Bit) = 2^3 = 8
 Usable Host: 2^(Remaining ID(R)) - 2 = (2^5) - 2 = 30
 Rang IP = 256 - (Subnet Mask) = 256 - 224 = 32
 
-0	32	64	96	128	  160	   192	     224	
-|	|	|	|	|	   |	    |	     |	
-  1 -> 30     33 -> 62   65 -> 94   97->126	  129->158   161->190  193->222 
+0	        32	      64	      96	      128	         160	          192	        224           256	
+|	        |	        | 	      |	        |	         |	             |	          |	            |
+ 1 -> 30    33 -> 62    65 -> 94  97->126	  129->158   161->190      193->222      125 -> 254
 1. 192.168.10.1->30
 2. 192.168.10.33->62
 3. 192.168.10.65->94
@@ -41,8 +41,8 @@ Rang IP = 256 - (Subnet Mask) = 256 - 240 = 16
 8x1 = 8
 (10).x.x.x /10 (default 16 -> (10-8) = 2) (sum from 128+64= 192) (subnet)
 Subnet Mask: 255.192.0.0
-CIDR: 20
-Borrow Bit: 4
+CIDR: 10
+Borrow Bit: 2
 Remaining ID(R): 32-CIDR = 32 - 10 = 22
 Number of Subnet: 2^(Borrow Bit) = 2^2 = 4
 Usable Host: 2^(Remaining ID(R)) - 2 = (2^22) - 2 = 4194302
