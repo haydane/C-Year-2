@@ -1,7 +1,7 @@
 #include <iostream.h>
 Polymorphism is a group of object that execute on methods use only object to access any methods
 OOP has 3 parts
-1. Ecapulation
+1. Ecapsulation
 2. Overloading
 3. Polymorphism
 virtual is a function uses as overwrite function for only BASE CLASS

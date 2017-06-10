@@ -3,8 +3,8 @@
 template <class t>
 class cuboID
 {
-public:
 	t x,y,z;
+public:
 	cuboID(t l,t w, t h)
 	{
 		x=l;

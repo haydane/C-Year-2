@@ -1,4 +1,4 @@
-/*Abstract class is class which exists per virtual function 
+/*Abstract class is class which exists pure virtual function 
 -no definition, can't make object 
 -role as base class*/
 #include <iostream.h>
@@ -54,7 +54,7 @@ void derived2::display()
 }
 void main()
 {
-	/*base *ptr[3];
+	/*base *ptr[2];
 	derived1 obj1;
 	derived2 obj2;
 	ptr[0] = &obj1;

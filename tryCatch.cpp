@@ -4,7 +4,7 @@ void main()
 	int studentAge;
 	try
 	{
-		cout << "studnet age: ";
+		cout << "student age: ";
 		cin >> studentAge;
 		if(studentAge<0)
 			throw "positive number required";

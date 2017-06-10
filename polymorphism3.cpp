@@ -9,7 +9,7 @@ class aa
 };
 class bb : public aa
 {
-	public:
+	protected:
 		void display()
 		{
 			cout << "Two " << endl;
@@ -17,7 +17,7 @@ class bb : public aa
 };
 class cc : public bb
 {
-	public:
+	protected:
 		void display()
 		{
 			cout << "Three " << endl;
@@ -25,7 +25,7 @@ class cc : public bb
 };
 class dd : public cc
 {
-	public:
+	protected:
 		void display()
 		{
 			cout << "Four " << endl;

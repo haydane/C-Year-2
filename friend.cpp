@@ -8,6 +8,10 @@ public:
 	{
 		x=l,y=w;
 	}
+	void output()
+	{
+		cout << x << "\t" << y << endl;
+	}
 };
 int Area(Rect &a) // definition of friend function
 {
@@ -16,6 +20,8 @@ int Area(Rect &a) // definition of friend function
 int main()
 {
 	Rect R1(5,6),R2(3,4); // declaration of
+	R1.output();
+	R2.output();
 	cout << Area(R1) << endl;
 	cout << Area(R2) << endl;
 	return (0); 

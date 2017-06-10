@@ -3,7 +3,7 @@ void main()
 {
 	student stu2(301,"Hay Dane",9.99);
 	student stu3(401,"Hay Day",77.8);
-	fstream f("stu1.obj",ios::binary|ios::in|ios::out);
+	fstream f("stu.obj",ios::binary|ios::in|ios::out);
 	if(f.fail())
 	{
 		cout << "Error cannot open file\n";

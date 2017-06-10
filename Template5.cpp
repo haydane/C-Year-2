@@ -31,7 +31,7 @@ void main()
 	show <int,float> obj2;
 	obj2.input();
 	obj2.output();
-	show <float,char[]>obj3;
+	show <float,char[]> obj3;
 	obj3.input();
 	obj3.output();
 }

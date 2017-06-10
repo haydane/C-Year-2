@@ -22,8 +22,8 @@ void main()
 		return;
 	}
 	student stu;
-	long mum = in.tellg()/sizeof(student);
-	if(mum == 0)
+	long num = in.tellg()/sizeof(student);
+	if(num == 0)
 		return;
 	in.seekg(0);
 	student::header();

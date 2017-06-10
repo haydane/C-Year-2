@@ -1,6 +1,7 @@
 #include <iostream.h>
 #include <fstream.h>
-class per{
+class per
+{
 private:
 	char name[80];
 	short age;
@@ -23,4 +24,11 @@ void main()
 	for(int i=0;i<3;i++)
 		er[i].output();
 	infile.close();
+	/*while(1)
+	{
+		infile.read((char*)(&er),sizeof(per));
+		if(infile.eof()) break;
+		er.output();
+	}
+	infile.close();*/
 }
